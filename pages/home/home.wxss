@@ -1,0 +1,42 @@
+/**index.wxss**/
+.card {
+  padding: 5rpx 24rpx 5rpx 24rpx;
+  display: flex;
+  height: 200rpx;
+  width: 100%;
+  border-bottom: 1px red solid;
+}
+
+.card-image-box {
+  flex: 2;
+  display: flex;
+}
+
+.card-image {
+  width: 100%;
+  height: 200rpx;
+}
+
+.card-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  align-content: space-around;
+}
+
+.card-content-head {
+  display: flex;
+  flex: 1;
+  font-size: 24rpx;
+}
+
+.card-content-body {
+  display: flex;
+  flex: 1;
+}
+
+.card-content-foot {
+  display: flex;
+  flex: 1;
+}

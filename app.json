@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/rank/rank"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#C30016",
+    "navigationBarTitleText": "二元淘客",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  },
+  // "tabBar": {
+  //   "backgroundColor": "#fff",
+  //   "selectedColor": "#C30016",
+  //   "list": [
+  //     {
+  //       "pagePath": "pages/home/home",
+  //       "text": "精选",
+  //       "iconPath": "./images/heart.png",
+  //       "selectedIconPath": "./images/heartselected.png"
+  //     },
+  //     {
+  //       "pagePath": "pages/rank/rank",
+  //       "text": "排行榜",
+  //       "iconPath": "./images/hotitem.png",
+  //       "selectedIconPath": "./images/hotitemselected.png"
+  //     }
+  //   ]
+  // },
+  "networkTimeout": {
+    "request": 10000
+  }
+}
