@@ -15,7 +15,7 @@
             <span class="text-markprice">{{product.productPrice - product.couponPrice}}</span>
           </view>
         </view>
-        <view class="card-content-box" style="margin-top: 18rpx;">
+        <view class="card-content-box" style="margin-top: 8rpx;">
           <view class="text-originprice">原价: {{product.productPrice}}</view>
         </view>
       </view>
