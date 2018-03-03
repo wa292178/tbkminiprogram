@@ -47,6 +47,31 @@ Page({
     })
   },
 
+  bindBuy: function(event) {
+    const tkl = event.target.dataset.tkl
+    wx.setClipboardData({
+      data: tkl,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showModal({
+              title: '复制成功',
+              content: '以复制淘口令，请打开淘宝购买',
+              showCancel: false,
+              confirmText: '确定',
+              confirmColor: '#da3764',
+              success: function (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                }
+              }
+            })
+          }
+        })
+      }
+    })
+  },
+
   onload: function () {
     this.refreshProducts()
   },

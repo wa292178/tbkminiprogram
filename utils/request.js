@@ -18,7 +18,8 @@ function request(api, method, header, params, success) {
     fail: function () {
       wx.showToast({
         icon: "loading",
-        title: "请检查网络..."
+        title: "请检查网络...",
+        duration: 10000
       })
     }
   })
