@@ -8,3 +8,9 @@
   align-items: center;
   justify-content: space-between;
 } 
+
+view {
+  color: #6a737d;
+  font-size: 24rpx;
+  text-overflow: ellipsis;
+}
