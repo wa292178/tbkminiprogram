@@ -1,6 +1,6 @@
 const config = require('../config/config.js')
 
-function request(api, method, header, params, success) {
+const request = function (api, method, header, params, success) {
   wx.showToast({
     icon: "loading",
     title: "加载中...",
@@ -18,7 +18,8 @@ function request(api, method, header, params, success) {
     fail: function () {
       wx.showToast({
         icon: "loading",
-        title: "请检查网络..."
+        title: "请检查网络...",
+        duration: 10000
       })
     }
   })

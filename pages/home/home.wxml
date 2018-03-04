@@ -9,21 +9,20 @@
         {{product.productName}}
       </view>
       <view class="card-content-body">
-        <view class="card-content-body-box">
-          <view class="card-content-body-text">券后价</view>
+        <view class="card-content-box">
+          <view>
+            <span>券后价: </span>
+            <span class="text-markprice">{{product.productPrice - product.couponPrice}}</span>
+          </view>
         </view>
-        <view>
-          <view>{{product.productPrice - product.couponPrice}}</view>
-        </view>
-        <view>
-          <view>原价</view>
-        </view>
-        <view>
-          <view>{{product.productPrice}}</view>
+        <view class="card-content-box" style="margin-top: 8rpx;">
+          <view class="text-originprice">原价: {{product.productPrice}}</view>
         </view>
       </view>
       <view class="card-content-foot">
-        现在购买
+        <view class="btn-buy" bindtap="bindBuy" data-tkl="{{product.couponTKL}}">
+          领{{product.couponPrice}}元券购买
+        </view>
       </view>
     </view>
   </view>
