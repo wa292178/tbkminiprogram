@@ -46,7 +46,7 @@
 
 .text-markprice {
   color: #C30016; 
-  font-size: 48rpx;
+  font-size: 36rpx;
 }
 
 .text-originprice {
