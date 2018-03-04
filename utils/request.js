@@ -1,6 +1,6 @@
 const config = require('../config/config.js')
 
-function request(api, method, header, params, success) {
+const request = function (api, method, header, params, success) {
   wx.showToast({
     icon: "loading",
     title: "加载中...",
