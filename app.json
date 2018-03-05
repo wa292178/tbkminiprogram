@@ -5,7 +5,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#C30016",
-    "navigationBarTitleText": "二元淘客",
+    "navigationBarTitleText": "淘淘省钱早报",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true
   },
