@@ -30,7 +30,8 @@ const get = (api, params, success) => {
   const GET_HEADER = {
     'content-type': 'application/json'
   }
-  request(api, GET_METHOD, GET_HEADER, params, success)
+  const paramsWithSecret = { ...params, secretAPI: config.secretAPI}
+  request(api, GET_METHOD, GET_HEADER, paramsWithSecret, success)
 }
 
 const post = (api, params, success) => {
@@ -38,7 +39,8 @@ const post = (api, params, success) => {
   const POST_HEADER = {
     'content-type': 'application/json'
   }
-  request(api, POST_METHOD, POST_HEADER, params, success)
+  const paramsWithSecret = { ...params, secretAPI: config.secretAPI }
+  request(api, POST_METHOD, POST_HEADER, paramsWithSecret, success)
 }
 
 
