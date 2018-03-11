@@ -38,7 +38,6 @@ Page({
       currentPage: 1
     })
     http.Get(config.productsAPI, params, function (res) {
-      console.log(res.data)
       if (res.data.status === true) {
         wx.setStorageSync('products', res.data.payload)
         that.setData({
@@ -109,6 +108,7 @@ Page({
     })
     const params = { page: that.data.currentPage }
     http.Get(config.productsAPI, params, function(res){
+//      console.log(res.data)
       if(res.data.status === true){
         wx.setStorageSync('products', that.data.products.concat(res.data.payload))
         that.setData({
@@ -126,11 +126,11 @@ Page({
     return {
       title: '分享',
       success: function(res){
-        console.log('成功')
+ //       console.log('成功')
         console.log(res)
       },
       fail: function(res){
-        console.log('失败')
+//        console.log('失败')
         console.log(res)
       }
     }
