@@ -1,7 +1,8 @@
 const config = {
-  'baseURL': 'http://localhost:4040',
+  'baseURL': 'https://www.ttsqzb.com',
   'productsAPI': '/api/products/findall',
-  'loginAPI': '/api/clients/wxlogin'
+  'loginAPI': '/api/clients/wxlogin',
+  'secretAPI': 'asdlczxksdcnkd&6',
 }
 
 module.exports = config

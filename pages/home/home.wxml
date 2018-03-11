@@ -20,7 +20,7 @@
         </view>
       </view>
       <view class="card-content-foot">
-        <view class="btn-buy" bindtap="bindBuy" data-tkl="{{product.couponTKL}}">
+        <view class="btn-buy" bindtap="bindBuy" data-tkl="{{product.couponTKL}}" data-createdtimestamp="{{product.timestamp}}">
           领{{product.couponPrice}}元券购买
         </view>
       </view>

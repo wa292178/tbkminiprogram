@@ -1,6 +1,7 @@
 const app = getApp()
 const http = require('../../utils/request.js')
 const config = require('../../config/config.js')
+const moment = require('../../utils/moment.js')
 
 Page({
   data: {
@@ -37,7 +38,6 @@ Page({
       currentPage: 1
     })
     http.Get(config.productsAPI, params, function (res) {
-      console.log(res.data)
       if (res.data.status === true) {
         wx.setStorageSync('products', res.data.payload)
         that.setData({
@@ -49,6 +49,22 @@ Page({
 
   bindBuy: function(event) {
     const tkl = event.target.dataset.tkl
+    const expire = event.target.dataset.createdtimestamp + 2592000
+    const current = moment().unix()
+    if(expire < current){
+      wx.showModal({
+        content: '优惠券领完啦!',
+        showCancel: false,
+        confirmText: '确定',
+        confirmColor: '#da3764',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
+      return
+    }
     wx.setClipboardData({
       data: tkl,
       success: function (res) {
@@ -92,6 +108,7 @@ Page({
     })
     const params = { page: that.data.currentPage }
     http.Get(config.productsAPI, params, function(res){
+//      console.log(res.data)
       if(res.data.status === true){
         wx.setStorageSync('products', that.data.products.concat(res.data.payload))
         that.setData({
@@ -103,6 +120,20 @@ Page({
         currentPage: that.data.currentPage - 1
       })
     })
+  },
+  onShareAppMessage: function(res){
+    console.log(res)
+    return {
+      title: '分享',
+      success: function(res){
+ //       console.log('成功')
+        console.log(res)
+      },
+      fail: function(res){
+//        console.log('失败')
+        console.log(res)
+      }
+    }
   }
 
 })
