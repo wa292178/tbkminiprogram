@@ -12,7 +12,7 @@
         <view class="card-content-box">
           <view>
             <span>券后价: </span>
-            <span class="text-markprice">{{product.productPrice - product.couponPrice}}</span>
+            <span class="text-markprice">{{product.afterCouponPrice}}</span>
           </view>
         </view>
         <view class="card-content-box" style="margin-top: 8rpx;">
