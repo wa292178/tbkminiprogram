@@ -1,13 +1,48 @@
 {
-  "pages":[
-    "pages/home/home"
+  "pages": [
+    "pages/home/home",
+    "pages/select/select",
+    "pages/search/search",
+    "pages/offer/offer",
+    "pages/result/result"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#C30016",
     "navigationBarTitleText": "淘淘省钱早报",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#da3764",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/homeselected.png"
+      },
+      {
+        "pagePath": "pages/select/select",
+        "text": "优选",
+        "iconPath": "images/select.png",
+        "selectedIconPath": "images/selectselected.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/searchselected.png"
+      },
+      {
+        "pagePath": "pages/offer/offer",
+        "text": "秒杀",
+        "iconPath": "images/offer.png",
+        "selectedIconPath": "images/offerselected.png"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000

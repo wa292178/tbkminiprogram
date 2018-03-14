@@ -1,4 +1,34 @@
-<!--index.wxml-->
+<!-- 幻灯片 -->
+<swiper 
+indicator-dots=true
+autoplay=true 
+indicator-color="rgba(0,0,0)" 
+indicator-active-color="#C30016" 
+interval="3000" 
+duration="500" style="height: 140px;">
+  <block wx:for="{{banners}}" wx:for-item="banner" wx:key="index">
+    <swiper-item>
+      <image src="{{banner.pict_url}}" mode="scaleToFill" class="image-slide" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 菜单 -->
+<view class="menu-section">
+  <view class="menu-row" style="background-color: blue;">
+    <view class="menu-block" style="background-color: #fff;">
+      <view class="menu-icon-block">1</view>
+      <view class="menu-text-block">2</view>
+    </view>
+    <view class="menu-block" style="background-color: #234234;"></view>
+    <view class="menu-block" style="background-color: grey;"></view>
+    <view class="menu-block" style="background-color: purple;"></view>
+    <view class="menu-block" style="background-color: black;"></view>     
+  </view>
+  <view class="menu-row" style="background-color: red;">
+  </view>
+  <view class="menu-row" style="background-color: green;">
+  </view>
+</view>
 <view class="container">
   <view class="card" wx:for="{{products}}" wx:for-item="product">
     <view class="card-image-box">
