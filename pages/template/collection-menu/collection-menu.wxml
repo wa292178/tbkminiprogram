@@ -1,0 +1,130 @@
+<template name="collection-menu">
+  <view class="menu-section">
+    <view class="menu-row">
+      <view class="menu-block">
+        <view class="menu-icon-block" bindtap='fushi'>
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+    </view>
+    <view class="menu-row">
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+    </view>
+    <view class="menu-row">
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+      <view class="menu-block">
+        <view class="menu-icon-block">
+          <image class="menu-icon-image" src="../../images/select.png"></image>
+        </view>
+        <view class="menu-text-block">
+          <view class="menu-text">服饰</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

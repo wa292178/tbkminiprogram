@@ -1,0 +1,17 @@
+<template name="slider">
+  <swiper
+    class="swiper"
+    indicator-dots=true
+    autoplay=true 
+    indicator-color="rgba(0,0,0)" 
+    indicator-active-color="#C30016" 
+    interval="3000" 
+    duration="500"
+  >
+  <block wx:for="{{banners}}" wx:for-item="banner" wx:key="index">
+    <swiper-item>
+      <image src="{{banner.pict_url}}" mode="scaleToFill" class="image-slide" />
+    </swiper-item>
+  </block>
+</swiper>
+</template>

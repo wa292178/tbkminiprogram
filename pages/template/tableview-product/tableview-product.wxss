@@ -1,0 +1,68 @@
+.card {
+  padding: 5rpx 24rpx 5rpx 24rpx;
+  display: flex;
+  height: 240rpx;
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 8px;
+}
+
+.card-image-box {
+  flex: 2;
+  display: flex;
+}
+
+.card-image {
+  width: 100%;
+  height: 240rpx;
+}
+
+.card-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  align-content: space-around;
+}
+
+.card-content-head {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  color: #333
+}
+
+.card-content-body {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-content-box {
+  display: flex; 
+  flex: 1;
+}
+
+.text-markprice {
+  color: #C30016; 
+  font-size: 36rpx;
+}
+
+.text-originprice {
+  text-decoration: line-through;
+}
+
+.card-content-foot {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.btn-buy {
+  border: 1px #da3764 solid;
+  padding: 10rpx;
+  background-color: #da3764; 
+  color: #fff; 
+  border-radius: 18rpx;
+}

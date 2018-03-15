@@ -1,0 +1,30 @@
+<template name="tableview-product">
+  <view class="container">
+    <view class="card" wx:for="{{products}}" wx:for-item="product">
+      <view class="card-image-box">
+        <image class="card-image" src="{{product.mainImage}}" mode="scaleToFit" lazy-load></image>
+      </view>
+      <view class="card-content">
+        <view class="card-content-head">
+          {{product.productName}}
+        </view>
+        <view class="card-content-body">
+          <view class="card-content-box">
+            <view>
+              <span>券后价: </span>
+              <span class="text-markprice">{{product.afterCouponPrice}}</span>
+            </view>
+          </view>
+          <view class="card-content-box" style="margin-top: 8rpx;">
+            <view class="text-originprice">原价: {{product.productPrice}}</view>
+          </view>
+        </view>
+        <view class="card-content-foot">
+          <view class="btn-buy" bindtap="bindBuy" data-tkl="{{product.couponTKL}}" data-createdtimestamp="{{product.timestamp}}">
+            领{{product.couponPrice}}元券购买
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

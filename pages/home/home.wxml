@@ -1,59 +1,10 @@
+<import src="../template/collection-menu/collection-menu.wxml" />
+<import src="../template/slider/slider.wxml" />
+<import src="../template/tableview-product/tableview-product.wxml" />
+
 <!-- 幻灯片 -->
-<swiper 
-indicator-dots=true
-autoplay=true 
-indicator-color="rgba(0,0,0)" 
-indicator-active-color="#C30016" 
-interval="3000" 
-duration="500" style="height: 140px;">
-  <block wx:for="{{banners}}" wx:for-item="banner" wx:key="index">
-    <swiper-item>
-      <image src="{{banner.pict_url}}" mode="scaleToFill" class="image-slide" />
-    </swiper-item>
-  </block>
-</swiper>
+<template is="slider" data="{{banners}}"></template>
 <!-- 菜单 -->
-<view class="menu-section">
-  <view class="menu-row" style="background-color: blue;">
-    <view class="menu-block" style="background-color: #fff;">
-      <view class="menu-icon-block">1</view>
-      <view class="menu-text-block">2</view>
-    </view>
-    <view class="menu-block" style="background-color: #234234;"></view>
-    <view class="menu-block" style="background-color: grey;"></view>
-    <view class="menu-block" style="background-color: purple;"></view>
-    <view class="menu-block" style="background-color: black;"></view>     
-  </view>
-  <view class="menu-row" style="background-color: red;">
-  </view>
-  <view class="menu-row" style="background-color: green;">
-  </view>
-</view>
-<view class="container">
-  <view class="card" wx:for="{{products}}" wx:for-item="product">
-    <view class="card-image-box">
-      <image class="card-image" src="{{product.mainImage}}" mode="scaleToFit" lazy-load></image>
-    </view>
-    <view class="card-content">
-      <view class="card-content-head">
-        {{product.productName}}
-      </view>
-      <view class="card-content-body">
-        <view class="card-content-box">
-          <view>
-            <span>券后价: </span>
-            <span class="text-markprice">{{product.afterCouponPrice}}</span>
-          </view>
-        </view>
-        <view class="card-content-box" style="margin-top: 8rpx;">
-          <view class="text-originprice">原价: {{product.productPrice}}</view>
-        </view>
-      </view>
-      <view class="card-content-foot">
-        <view class="btn-buy" bindtap="bindBuy" data-tkl="{{product.couponTKL}}" data-createdtimestamp="{{product.timestamp}}">
-          领{{product.couponPrice}}元券购买
-        </view>
-      </view>
-    </view>
-  </view>
-</view>
+<template is="collection-menu"></template>
+<!-- 产品列表-->
+<template is="tableview-product" data="{{products}}"></template>

@@ -10,7 +10,7 @@ Page({
     products: [],
     banners: []
   },
-
+  
   loadFirstProducts: function(){
     const that = this
     const params = { page: that.data.defaultPage }
