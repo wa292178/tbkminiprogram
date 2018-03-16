@@ -1,3 +1,5 @@
 @import "../template/collection-menu/collection-menu.wxss";
 @import "../template/slider/slider.wxss";
-@import "../template/tableview-product/tableview-product.wxss";
+@import "../template/tableview-daogou/tableview-daogou.wxss";
+@import "../template/navbar-menu/navbar-menu.wxss";
+@import "../template/tableview-search/tableview-search.wxss";

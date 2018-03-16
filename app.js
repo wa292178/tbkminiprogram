@@ -11,7 +11,6 @@ App({
     wx.login({
       success: function(res){
         if(res.code){
-          console.log(res.code)
           http.Post(config.loginAPI, {code: res.code}, function(res){
             console.log(res)
           })

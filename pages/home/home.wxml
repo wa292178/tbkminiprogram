@@ -1,10 +1,21 @@
 <import src="../template/collection-menu/collection-menu.wxml" />
 <import src="../template/slider/slider.wxml" />
-<import src="../template/tableview-product/tableview-product.wxml" />
+<import src="../template/tableview-daogou/tableview-daogou.wxml" />
+<import src="../template/navbar-menu/navbar-menu.wxml" />
+<import src="../template/tableview-search/tableview-search.wxml" />
+<!-- scroll菜单 -->
+<template is="navbar-menu" data="{{navbar, currentTab}}"></template>
 
-<!-- 幻灯片 -->
-<template is="slider" data="{{banners}}"></template>
-<!-- 菜单 -->
-<template is="collection-menu"></template>
-<!-- 产品列表-->
-<template is="tableview-product" data="{{products}}"></template>
+<view wx:if="{{currentTab === 0}}">
+    <!-- 幻灯片 -->
+    <template is="slider" data="{{banners}}"></template>
+    <!-- 菜单 -->
+    <template is="collection-menu"></template>
+    <!-- 产品列表-->
+    <template is="tableview-daogou" data="{{daogou}}"></template> 
+</view>
+<view wx:for="{{navbar}}" wx:if="{{currentTab === index && currentTab !== 0}}" style="margin-top: 80rpx;">
+      <template is="tableview-search" data="{{results}}"></template>
+</view>
+
+

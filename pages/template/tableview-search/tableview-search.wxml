@@ -1,0 +1,33 @@
+<template name="tableview-search">
+  <view class="container">
+    <view class="card" wx:for="{{results}}" wx:for-item="result">
+      <view class="card-image-box">
+        <image class="card-image" src="{{result.pict_url}}" mode="scaleToFit" lazy-load></image>
+      </view>
+      <view class="card-content">
+        <view class="card-content-head">
+          {{result.title30}}
+        </view>
+        <view class="card-content-body">
+          <view class="card-content-box">
+            <view>
+              <span>券后价: </span>
+              <span class="text-markprice">{{result.zk_final_price}}</span>
+            </view>
+          </view>
+          <view class="card-content-box" style="margin-top: 8rpx;">
+            <view class="text-originprice">原价: {{result.reserve_price}}</view>
+          </view>
+        </view>
+        <view class="card-content-foot">
+          <view class="card-content-foot-block" bindtap="bindBuy">
+            <view class="secondary-button">详细</view>
+          </view>
+          <view class="card-content-foot-block">
+            <view class="">销量: {{result.volume}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

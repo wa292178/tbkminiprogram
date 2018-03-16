@@ -1,0 +1,5 @@
+<template name="navbar-menu">
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+          <view wx:for="{{navbar}}" data-current="{{index}}" class="tab-item {{currentTab==index?'active':''}}" bindtap="swichNav">{{item}}</view>
+  </scroll-view>
+</template>

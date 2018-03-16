@@ -1,0 +1,33 @@
+<template name="tableview-daogou">
+  <view class="container">
+    <view class="card" wx:for="{{daogou}}" wx:for-item="daogou">
+      <view class="card-image-box">
+        <image class="card-image" src="{{daogou.pict_url}}" mode="scaleToFit" lazy-load></image>
+      </view>
+      <view class="card-content">
+        <view class="card-content-head">
+          {{daogou.title30}}
+        </view>
+        <view class="card-content-body">
+          <view class="card-content-box">
+            <view>
+              <span>券后价: </span>
+              <span class="text-markprice">{{daogou.afterCouponPrice}}</span>
+            </view>
+          </view>
+          <view class="card-content-box" style="margin-top: 8rpx;">
+            <view class="text-originprice">原价: {{daogou.zk_final_price}}</view>
+          </view>
+        </view>
+        <view class="card-content-foot">
+          <view class="card-content-foot-block" bindtap="bindBuy">
+            <view class="secondary-button">领券立减{{daogou.couponPrice}}元</view>
+          </view>
+          <view class="card-content-foot-block">
+            <view class="">销量: {{daogou.volume}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

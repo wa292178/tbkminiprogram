@@ -1,0 +1,43 @@
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.tab-h {
+    height: 80rpx;
+    width: 100%; 
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #FFFFFF; 
+    font-size: 16px; 
+    white-space: nowrap;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    z-index: 99;
+}
+
+.tab-item {
+  text-align: center;
+  margin:0 36rpx;
+  display: inline-block;
+  }
+
+.tab-item.active {
+  color: #C30016;
+  position: relative;
+}
+
+.tab-item.active:after { 
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #C30016;
+  position: absolute; 
+  bottom: 0;
+  right: 1rpx;
+  border-radius: 16rpx;
+}

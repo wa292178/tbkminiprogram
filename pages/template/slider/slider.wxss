@@ -1,5 +1,6 @@
 .swiper {
-  height: 140px;
+  margin-top: 80rpx;
+  height: 240rpx;
 }
 
 .image-slide {
