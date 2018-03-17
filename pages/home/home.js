@@ -16,6 +16,83 @@ Page({
     results: []
   },
 
+  onload: function () {
+    this.initProducts()
+  },
+
+  onShow: function () {
+    this.initProducts()
+  },
+
+  onPullDownRefresh: function () {
+    const that = this
+    that.setData({
+      currentPage: 1
+    })
+    wx.stopPullDownRefresh()
+    if (that.data.currentTab === 0) {
+      that.refreshProducts()
+    } else {
+      that.search(that.data.currentPage, (res) => {
+        const results = res.data.payload.results.n_tbk_item
+        const newResults = util.resResults(results)
+        that.setData({
+          results: newResults
+        })
+      })
+    }
+  },
+
+  onReachBottom: function () {
+    const that = this
+    that.setData({
+      currentPage: that.data.currentPage + 1
+    })
+    if (that.data.currentTab === 0) {
+      const params = {
+        adzone_id: config.adzoneId,
+        platform: 2,
+        page_size: that.data.pageSize,
+        page_no: that.data.currentPage
+      }
+      http.Get(config.dgItemAPI, params, function (res) {
+        if (res.data.status === true) {
+          const results = res.data.payload.results.tbk_coupon
+          const dgResults = util.resResults(results)
+          wx.setStorageSync('daogou', that.data.daogou.concat(dgResults))
+          that.setData({
+            daogou: that.data.daogou.concat(dgResults)
+          })
+          return
+        }
+        that.setData({
+          currentPage: that.data.currentPage - 1
+        })
+      })
+    } else if (that.data.currentTab > 0) {
+      that.search(that.data.currentTab, function (res) {
+        const results = res.data.payload.results.n_tbk_item
+        const newResults = util.resResults(results)
+        that.setData({
+          results: that.data.results.concat(newResults)
+        })
+      })
+    }
+  },
+
+  onShareAppMessage: function (res) {
+    console.log(res)
+    return {
+      title: '分享',
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    }
+  },
+
   swichNav: function (e) {
     const that = this
     let cur = e.target.dataset.current;
@@ -30,9 +107,15 @@ Page({
       that.search(cur, function (res) {
         const results = res.data.payload.results.n_tbk_item
         const newResults = util.resResults(results)
-        that.setData({ results: newResults })
+        that.setData({
+          results: newResults
+        })
       })
     }
+  },
+
+  bindBuy: function (event) {
+    console.log('123')
   },
 
   search: function (cur, callback) {
@@ -46,8 +129,6 @@ Page({
       page_no: that.data.currentPage
     }
     http.Get(config.itemGetAPI, params, function (res) {
-      console.log(that.data)
-      console.log(res)
       if (res.data.status === true) {
         callback(res)
       }
@@ -137,83 +218,4 @@ Page({
       }
     })
   },
-
-  bindBuy: function (event) {
-    console.log('123')
-  },
-
-  onload: function () {
-    this.initProducts()
-  },
-
-  onShow: function () {
-    this.initProducts()
-  },
-
-  onPullDownRefresh: function () {
-    const that = this
-    console.log(that.data)
-    that.setData({
-      currentPage: 1
-    })
-    wx.stopPullDownRefresh()
-    if (that.data.currentTab === 0) {
-      that.refreshProducts()
-    } else {
-      that.search(that.data.currentPage, (res) => {
-        const results = res.data.payload.results.n_tbk_item
-        const newResults = util.resResults(results)
-        that.setData({ results: newResults })
-      })
-    }
-  },
-
-  onReachBottom: function () {
-    const that = this
-    console.log(that.data)
-    that.setData({
-      currentPage: that.data.currentPage + 1
-    })
-    if (that.data.currentTab === 0) {
-      const params = {
-        adzone_id: config.adzoneId,
-        platform: 2,
-        page_size: that.data.pageSize,
-        page_no: that.data.currentPage
-      }
-      http.Get(config.dgItemAPI, params, function (res) {
-        if (res.data.status === true) {
-          const results = res.data.payload.results.tbk_coupon
-          const dgResults = util.resResults(results)
-          wx.setStorageSync('daogou', that.data.daogou.concat(dgResults))
-          that.setData({
-            daogou: that.data.daogou.concat(dgResults)
-          })
-          return
-        }
-        that.setData({
-          currentPage: that.data.currentPage - 1
-        })
-      })
-    } else if (that.data.currentTab > 0) {
-      that.search(that.data.currentTab, function (res) {
-        const results = res.data.payload.results.n_tbk_item
-        const newResults = util.resResults(results)
-        that.setData({ results: that.data.results.concat(newResults) })
-      })
-    }
-  },
-  onShareAppMessage: function (res) {
-    console.log(res)
-    return {
-      title: '分享',
-      success: function (res) {
-        console.log(res)
-      },
-      fail: function (res) {
-        console.log(res)
-      }
-    }
-  }
-
 })
